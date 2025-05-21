@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<style>
+    img{
+        height: 200px;
+        width: 450px;
+    }
+</style>
+</head>
+
+<body>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <h2>Select your Coruse</h2>
+            <select name="" id="pro_1" class="form-select" onchange="product_1()">
+                <option value="">select product</option>
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Php">Php</option>
+                <option value=".net">.net</option>
+            </select>
+            <img src="select.jpg" alt="" id="img_1" class="mt-3">
+        </div>
+
+        <div class="col-5">
+            <h2>Select your Program</h2>
+            <select name="" id="pro_2" class="form-select" onchange="product_2()">
+                <option value="">select product</option>
+                <option value="Short Coruse">Short Coruse</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Certificate">Certificate</option>
+                <option value="Degree">Degree</option>
+            </select>
+            <img src="select.jpg" alt="" id="img_2" class="mt-3">
+            <ul id="par"></ul>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary mt-5">Click</button>
+        </div>
+
+    </div>
+</div>
+
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minima cumque nulla eveniet architecto cupiditate hic accusamus aut ea dolorem?
+
+
+
+
+
+    <script>
+
+       function product_1(){
+        var name = document.getElementById("pro_1").value 
+        var va= document.getElementById("value")
+        if(name=="Python"){
+            document.getElementById("img_1").src="pytn.jpg"
+            
+        } 
+        else if (name=="JavaScript"){
+            document.getElementById("img_1").src="new1.png"
+        }
+        else if (name=="Php"){
+            document.getElementById("img_1").src="new1.png"
+        }
+        else if (name==".net"){
+            document.getElementById("img_1").src="course1.jpg"
+        }
+        else{
+            alert("please select the product")
+        }
+
+       }
+
+
+       
+       function product_2(){
+        var name = document.getElementById("pro_2").value 
+        var de = document.getElementById("par")
+        if(name=="Short Coruse"){
+            document.getElementById("img_2").src="sht1.jpg"
+            par.innerHTML='<li> Duration:- 6 months </li> <li> fee:- 48000/= </li>'
+        } 
+        else if (name=="Diploma"){
+            document.getElementById("img_2").src="sht2.jpg"
+             par.innerHTML='<li> Duration:- 1 year </li> <li> fee:- 98000/= </li>'
+        }
+        else if (name=="Certificate"){
+            document.getElementById("img_2").src="sht3.webp"
+            par.innerHTML='<li> Duration:- 2 year </li> <li> fee:- 148000/= </li>'
+        }
+        else if (name=="Degree"){
+            document.getElementById("img_2").src="sht4.jpg"
+            par.innerHTML='<li> Duration:- 3 year </li> <li> fee:- 248000/= </li>'
+        }
+        else{
+            alert("please select the product")
+        }
+
+       }
+    </script>

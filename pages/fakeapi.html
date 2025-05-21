@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container" id="header"></div>
+
+<div class="container mx-auto mt-3" id="slider"></div>
+
+    <div class="container-fluid mx-auto mt-3">
+        <div class="row" id="pro">
+
+        </div>
+    </div>
+
+    <div class="container" id="footer">
+
+</div>
+
+<script type="module" >
+    import{header,slider,footer} from'./export.js';
+    document.getElementById("header").innerHTML=header
+    document.getElementById("slider").innerHTML=slider
+    document.getElementById("footer").innerHTML=footer
+
+</script>
+
+    <script>
+        var html=""
+        fetch("mobile.json")
+        .then(data=>data.json())
+        .then(data=>{
+            for(var i in data){
+                html+=`
+<div class="card" style="width: 18rem;">
+  <img src="${data[i].image}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${data[i].name}</h5>
+    <p class="card-text">${data[i].id}</p>
+    <p class="card-text">${data[i].description}</p>
+    <a href="#" class="btn btn-primary">view</a>
+  </div>
+</div>`
+              
+            }
+                     document.getElementById("pro").innerHTML=html
+        });
+    </script>
+</body>
+</html>

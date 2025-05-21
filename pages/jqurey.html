@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- <p id="a">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam beatae illo voluptate totam alias odio! Omnis nihil quas consequuntur facere, quasi illo!</p>
+    <button id="b">hide</button>
+    <button id="c">show</button>
+    <button id="d">color change</button>
+    <br><br>
+
+    <label for=""> Data Entry</label>
+    <input type="text" placeholder="enter name" id="data">
+    <label for=""> Age</label>
+    <input type="text" placeholder="enter name" id="data1">
+    <button id="btn">Submit</button>
+    <ul id="list">
+
+    </ul>
+    
+
+
+<fieldset>
+<p id="img">
+    <img src="sht1.jpg" alt="">
+    <img src="sht2.jpg" alt="">
+    <img src="sht3.webp" alt="">
+
+</p>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+</fieldset> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-5 mx-auto p-5">
+            <label for="">Password</label> <br>
+            <input type="password" placeholder="enter password" class="form-control" id="pass">
+            <label for="" id="str1"></label>
+            <br>
+            <label for="">Confrim Password</label> <br>
+            <input type="password" placeholder="enter password" class="form-control" id="pass1">
+            <br>
+            <label for="" id="str"></label>
+        </div>
+    </div>
+</div>
+
+    
+
+
+
+
+    <script>
+        // $(document).ready(function(){
+        //     $("#b").click(function(){
+        //         $("#a").hide()
+        //     })
+
+        //     $("#c").click(function(){
+        //         $("#a").show()
+        //     })
+
+        //     $("#d").click(function(){
+        //         $("#a").css("color","red")
+        //         $("#a").css("font-size","30px")
+        //         $("#a").css("font-","30px")
+        //     })
+
+
+        //     $("#btn").click(function(){
+        //         var data=$("#data").val()
+        //         var data1=$("#data1").val()
+        //         $("#list").append("<li>"+data+data1+"</li>")
+
+                
+        //     })        
+
+        //     $("#hide").click(function(){
+        //         $("#img").hide()
+        //     })
+
+        //     $("#show").click(function(){
+        //         $("#img").show()
+        //     })
+
+
+        // });
+
+$(document).ready(function(){
+    $("#pass1").keyup(function(){
+        var a=$("#pass").val()
+        var b=$("#pass1").val()
+
+        if(a==b){
+            $("#str").html("password match");
+            $("#str").css("color","green");
+            $("#str").css("font-weight","bold");
+        }
+        else{
+            $("#str").html("password Not match");
+            $("#str").css("color","red");
+            $("#str").css("font-weight","bold");
+            
+        }
+    });
+
+    $("#pass").keyup(function(){
+        var d=$("#pass").val().length
+        if(d>=8){
+            $("#str1").html("strong");
+            $("#str1").css("color","green");
+            $("#str1").css("font-weight","bold");
+        } else if(d<=8){
+            $("#str1").html("weak");
+            $("#str1").css("color","red");
+            $("#str1").css("font-weight","bold");
+
+        }
+    })
+
+});
+
+    </script>
+</body>
+</html>
